@@ -10,7 +10,7 @@ import (
 type Todo struct {
 	ID        int    `json:"id"`
 	Completed bool   `json:"completed"`
-	Body	  string `json:"body"`
+	Body      string `json:"body"`
 }
 
 func main() {
@@ -19,7 +19,7 @@ func main() {
 
 	todos := []Todo{}
 
-	app.Get("/", func(c *fiber.Ctx) error { return  c.Status(fiber.StatusOK).JSON(fiber.Map{"message": "Hello World!"}) })
+	app.Get("/", func(c *fiber.Ctx) error { return c.Status(fiber.StatusOK).JSON(fiber.Map{"message": "Hello World!"}) })
 
 	app.Post("/api/todos", func(c *fiber.Ctx) error {
 		todo := &Todo{}
