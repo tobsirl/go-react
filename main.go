@@ -11,7 +11,7 @@ func main() {
 	fmt.Println("Hello, World!")
 	app := fiber.New()
 
-	app.Get("/", func(c *fiber.Ctx) error { return c.SendString("Hello, Worldasdfas!") })
+	app.Get("/", func(c *fiber.Ctx) error { return  c.Status(fiber.StatusOK).JSON(fiber.Map{"message": "Hello World!"}) })
 
 	log.Fatal(app.Listen(":4000"))
 }
