@@ -1,9 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 func main() {
-	// Code
 	fmt.Println("Hello, World!")
-	
+	app := fiber.New()
+
+	app.Listen(":4000")
 }
