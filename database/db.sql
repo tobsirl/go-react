@@ -3,7 +3,7 @@
 -- Modified: 2019-07-10 15:00:00
 -- Project: todos
 CREATE TABLE todos (
-  id UUID PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
   body VARCHAR(255) NOT NULL,
   completed BOOLEAN DEFAULT FALSE
 ); 

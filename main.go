@@ -53,6 +53,11 @@ func main() {
 
 		todo.ID = len(todos) + 1
 		todos = append(todos, *todo)
+		// save to database
+		_, err := database.Db.Exec("INSERT INTO todos (id, completed, body) VALUES ($1, $2, $3)", todo.ID, todo.Completed, todo.Body)
+		if err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
+		}
 
 		return c.Status(fiber.StatusCreated).JSON(todo)
 	})
