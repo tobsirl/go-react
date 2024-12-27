@@ -7,6 +7,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
+	"github.com/tobsirl/go-react/database"
 )
 
 type Todo struct {
@@ -16,7 +17,7 @@ type Todo struct {
 }
 
 func main() {
-	fmt.Println("Hello, World!")
+	database.ConnectDatabase()
 	app := fiber.New()
 
 	err := godotenv.Load(".env")

@@ -8,6 +8,7 @@ import (
 	"strconv"
 
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
 )
 
 var Db *sql.DB // global variable to hold the connection
