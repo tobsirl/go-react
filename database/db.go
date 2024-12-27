@@ -32,7 +32,7 @@ func ConnectDatabase() {
 		fmt.Println("Error connecting to the database: ", errSql)
 		panic(errSql)
 	} else {
-		db = db
+		Db = db
 		fmt.Println("Successfully connected to the database")
 	}
 }
