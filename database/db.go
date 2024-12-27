@@ -10,7 +10,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var db *sql.DB // global variable to hold the connection
+var Db *sql.DB // global variable to hold the connection
 
 func ConnectDatabase() {
 	err := godotenv.Load(".env")
