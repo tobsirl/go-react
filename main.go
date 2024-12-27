@@ -85,5 +85,5 @@ func main() {
 		return c.Status(404).JSON(fiber.Map{"error": "Todo not found"})
 	})
 
-	log.Fatal(app.Listen(":"+PORT))
+	log.Fatal(app.Listen(":" + PORT))
 }

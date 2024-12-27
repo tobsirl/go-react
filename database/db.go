@@ -3,11 +3,11 @@ package database
 import (
 	"database/sql"
 	"fmt"
-	"github.com/joho/godotenv"
 	"log"
 	"os"
-	"github.com/lib/pq"
 	"strconv"
+
+	"github.com/joho/godotenv"
 )
 
 var db *sql.DB // global variable to hold the connection
@@ -18,5 +18,21 @@ func ConnectDatabase() {
 		log.Fatal("Error loading .env file")
 	}
 
-	
+	// read in the environment variables
+	host := os.Getenv("DB_HOST")
+	port, _ := strconv.Atoi(os.Getenv("DB_PORT"))
+	user := os.Getenv("DB_USER")
+	dbname := os.Getenv("DB_NAME")
+	password := os.Getenv("DB_PASSWORD")
+
+	// set up postgres sql to open a connection
+	psqlSetup := fmt.Sprintf("host=%s port=%d user=%s dbname=%s password=%s sslmode=disable", host, port, user, dbname, password)
+	db, errSql := sql.Open("postgres", psqlSetup)
+	if errSql != nil {
+		fmt.Println("Error connecting to the database: ", errSql)
+		panic(errSql)
+	} else {
+		db = db
+		fmt.Println("Successfully connected to the database")
+	}
 }
