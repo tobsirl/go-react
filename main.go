@@ -36,6 +36,12 @@ func main() {
 
 	// Get all todos
 	app.Get("/api/todos", func(c *fiber.Ctx) error {
+		// get from database
+		rows, err := database.Db.Query("SELECT * FROM todos")
+		if err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": err.Error()})
+		}
+		defer rows.Close()
 		return c.Status(fiber.StatusOK).JSON(todos)
 	})
 
