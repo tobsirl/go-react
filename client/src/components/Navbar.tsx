@@ -1,6 +1,4 @@
 import { Box, Flex, Text, Container } from "@chakra-ui/react";
-import { IoMoon } from "react-icons/io5";
-import { LuSun } from "react-icons/lu";
 
 export default function Navbar() {
   return (
