@@ -1,16 +1,15 @@
-import { Stack } from "@chakra-ui/react";
+import { Stack, Container } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   return (
     <>
       <Stack h="100vh">
         <Navbar />
-        {/* <Container>
-          <TodoForm>
-            <TodoList />
-          </TodoForm>
-        </Container> */}
+        <Container>
+          <TodoForm>{/* <TodoList /> */}</TodoForm>
+        </Container>
       </Stack>
     </>
   );
