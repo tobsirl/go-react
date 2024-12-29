@@ -1,14 +1,16 @@
-import { Button } from "@/components/ui/button";
 import { Stack } from "@chakra-ui/react";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
       <Stack h="100vh">
-        <Button color={"white"} bg={"blue.500"} variant={"outline"}>
-          Hello
-        </Button>
-        <Button>Click me</Button>
+        <Navbar />
+        {/* <Container>
+          <TodoForm>
+            <TodoList />
+          </TodoForm>
+        </Container> */}
       </Stack>
     </>
   );
